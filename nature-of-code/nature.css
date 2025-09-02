@@ -33,6 +33,7 @@ main {
     margin: 2rem auto;
     padding: 0 1rem;
     text-align: left;
+    box-sizing: border-box;
 }
 
 /* Links */
@@ -41,6 +42,7 @@ a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
+    word-break: break-word;
 }
 
 a:hover {
@@ -58,11 +60,32 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    main {
+        max-width: 95vw;
+        padding: 0 1rem;
+    }
     header h1 {
-        font-size: 1.7rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 1rem 0 0.5rem 0;
+    }
+    header h1 {
+        font-size: 1.4rem;
+    }
+    header h2 {
+        font-size: 1rem;
     }
     main {
         padding: 0 0.5rem;
+        margin: 1rem auto;
+    }
+    footer {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
     }
 }
