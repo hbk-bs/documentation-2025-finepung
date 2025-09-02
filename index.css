@@ -1,7 +1,7 @@
 /* Grundlayout */
 body {
     font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa, #e4ebf0);
+    background: none; /* Remove background color and gradient */
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -15,7 +15,7 @@ header, footer {
     text-align: center;
     padding: 1rem;
     width: 100%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: none; /* Remove box shadow */
 }
 
 header h1 {
@@ -36,8 +36,8 @@ main {
     box-shadow: none;           /* Remove box shadow */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;   /* Align content to flex-start */
+    text-align: left;          /* Left-align text */
     transition: all 0.3s ease;
 }
 
