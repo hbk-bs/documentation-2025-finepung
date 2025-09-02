@@ -1,0 +1,68 @@
+/* Grundlayout */
+body {
+    font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #222;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1976d2;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+/* Links */
+a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+        main {
+            padding: 0 0.5rem;
+        }
+    }
