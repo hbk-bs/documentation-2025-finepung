@@ -78,6 +78,26 @@ a:hover {
     background: none;          /* Remove background */
 }
 
+/* GitHub Repository Link Below Main */
+.github-link {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    display: block;
+}
+
+.github-link a {
+    color: #1976d2;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.github-link a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+}
+
 /* Responsive Anpassungen */
 @media (max-width: 900px) {
     main {
