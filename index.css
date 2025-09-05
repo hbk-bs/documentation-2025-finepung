@@ -1,0 +1,123 @@
+/* Grundlayout */
+body {
+    font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: none; 
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header & Footer */
+header, footer {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: none; 
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* Hauptbereich */
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: none;           
+    padding: 0;                 
+    border-radius: 0;           
+    box-shadow: none;           
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   
+    text-align: left;          
+    transition: all 0.3s ease;
+}
+
+/* Navigation */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: -5rem;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+li {
+    margin: 0;
+}
+
+/* Links */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1976d2;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0;                /* Remove padding */
+    border-radius: 0;          /* Remove border radius */
+    background: none;          /* Remove background */
+    box-shadow: none;          
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+    transform: none;           /* Remove transform effect */
+    box-shadow: none;          /* Remove box shadow */
+    background: none;          /* Remove background */
+}
+
+/* GitHub Repository Link Below Main */
+.github-link {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    display: block;
+}
+
+.github-link a {
+    color: #1976d2;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.github-link a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 900px) {
+    main {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header, footer {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
