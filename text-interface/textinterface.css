@@ -8,7 +8,6 @@ html {
 
 body {
     font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: #f5f7fa;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -80,10 +79,30 @@ a:hover {
 /* Project Images */
 .project-image {
     display: block;
-    margin: 1.5rem auto;
+    margin: 2.5rem auto 0.5rem auto;
     max-width: 400px;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.07);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.project-image:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 3px 12px rgba(0,0,0,0.12);
+    transform: scale(1.03);
+}
+
+/* Image Captions */
+.image-caption {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #1976d2;
+    background: #e3f2fd;
+    border-radius: 8px;
+    margin: 0.7rem auto 1.2rem auto;
+    padding: 0.4rem 0.8rem;
+    max-width: 350px;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.07);
+    letter-spacing: 0.02em;
 }
 
 /* Footer */
