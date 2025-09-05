@@ -1,4 +1,11 @@
 /* Grundlayout */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
     background: #f5f7fa;
@@ -82,8 +89,8 @@ footer {
 /* Responsive */
 @media (max-width: 900px) {
     main {
-        max-width: 95vw;
-        padding: 0 1rem;
+        max-width: 98vw;
+        padding: 0 0.5rem;
     }
     header h1 {
         font-size: 2rem;
@@ -95,14 +102,15 @@ footer {
         padding: 1rem 0 0.5rem 0;
     }
     header h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     header h2 {
         font-size: 1rem;
     }
     main {
-        padding: 0 0.5rem;
+        padding: 0 0.2rem;
         margin: 1rem auto;
+        font-size: 1rem;
     }
     footer {
         font-size: 0.85rem;
