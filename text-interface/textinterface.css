@@ -68,12 +68,12 @@ a {
     text-align: center;
     margin: 2.5rem auto 1.5rem auto;
     display: block;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    border: 1px solid #e0e0e0;
-    max-width: 420px;
-    padding: 1.2rem 0.5rem;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    max-width: none;
+    padding: 0;
 }
 
 .github-link a {
