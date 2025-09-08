@@ -1,124 +1,134 @@
 /* Grundlayout */
 html {
     box-sizing: border-box;
+    background: #f8f8f8;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
 body {
-    font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-family: 'Inter', 'Montserrat', 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     color: #222;
+    background: #f8f8f8;
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 2rem 0 1rem 0;
+    padding: 2.5rem 0 1.5rem 0;
+    background: none;
+    border-bottom: none;
+    box-shadow: none;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1976d2;
-    margin-bottom: 0.5rem;
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.02em;
 }
 
 header h2 {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
 }
 
 /* Main Content */
 main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 820px;
+    margin: 2.5rem auto;
+    padding: 1.5rem 2rem;
     text-align: left;
-    box-sizing: border-box;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    border: 1px solid #eee;
 }
 
 /* Links */
 a {
-    color: #1976d2;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-    word-break: break-word;
-}
-
-a:hover {
-    color: #1565c0;
+    color: #d32f2f;
     text-decoration: underline;
+    font-weight: 600;
+    word-break: break-word;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    padding: 0.1rem 0.2rem;
 }
 
 /* GitHub Repository Link Below Main */
 .github-link {
     text-align: center;
-    margin: 2rem 0 1rem 0;
+    margin: 2.5rem auto 1.5rem auto;
     display: block;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #e0e0e0;
+    max-width: 420px;
+    padding: 1.2rem 0.5rem;
 }
 
 .github-link a {
-    color: #1976d2;
-    font-weight: 500;
-    font-size: 1.05rem;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.github-link a:hover {
-    color: #1565c0;
+    color: #d32f2f;
+    font-weight: 700;
+    font-size: 1.35rem;
     text-decoration: underline;
+    background: none;
+    border-bottom: none;
+    padding: 0.5rem 0.2rem;
+    border-radius: 6px;
 }
 
 /* Project Images */
 .project-image {
     display: block;
-    margin: 2.5rem auto 0.5rem auto;
-    max-width: 400px;
+    margin: 2.5rem auto 0.7rem auto;
+    max-width: 420px;
     width: 100%;
-    border-radius: 16px;
+    border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.07);
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-.project-image:hover {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 3px 12px rgba(0,0,0,0.12);
-    transform: scale(1.03);
+    border: 1px solid #e0e0e0;
 }
 
 /* Image Captions */
 .image-caption {
     text-align: center;
-    font-size: 1.05rem;
-    color: #1976d2;
-    background: #e3f2fd;
-    border-radius: 8px;
-    margin: 0.7rem auto 1.2rem auto;
+    font-size: 1.08rem;
+    color: #444;
+    margin: 0.7rem auto 0.2rem auto;
     padding: 0.4rem 0.8rem;
     max-width: 350px;
-    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.07);
     letter-spacing: 0.02em;
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 1rem 0;
-    color: #888;
-    font-size: 0.95rem;
-    margin-top: 2rem;
+    padding: 1.2rem 0;
+    color: #aaa;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    background: #fff;
+    border-top: 1px solid #eee;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
     main {
-        max-width: 98vw;
-        padding: 0 0.5rem;
+        max-width: 99vw;
+        padding: 1rem 0.5rem;
     }
     header h1 {
         font-size: 2rem;
@@ -127,7 +137,7 @@ footer {
 
 @media (max-width: 600px) {
     header {
-        padding: 1rem 0 0.5rem 0;
+        padding: 1.2rem 0 0.7rem 0;
     }
     header h1 {
         font-size: 1.3rem;
@@ -136,13 +146,17 @@ footer {
         font-size: 1rem;
     }
     main {
-        padding: 0 0.2rem;
-        margin: 1rem auto;
+        padding: 0.5rem 0.2rem;
+        margin: 1.2rem auto;
+        font-size: 1rem;
+    }
+    .github-link {
+        padding: 0.7rem 0.2rem;
         font-size: 1rem;
     }
     footer {
         font-size: 0.85rem;
-        padding: 0.5rem 0;
+        padding: 0.7rem 0;
     }
 }
 
@@ -154,7 +168,7 @@ footer {
         font-size: 0.85rem;
     }
     main {
-        padding: 0 0.1rem;
+        padding: 0.2rem 0.1rem;
         font-size: 0.95rem;
     }
     .github-link a {
