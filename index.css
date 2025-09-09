@@ -146,7 +146,6 @@ a:hover {
   max-width: 100%;
   font-weight: 500;
   letter-spacing: 0.01em;
-  
 }
 .link-box {
   background: #fff;
@@ -161,6 +160,9 @@ a:hover {
   max-width: 100vw;
   transition: box-shadow 0.2s;
   overflow: hidden;
+}
+.link-box:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 .link-preview-img {
   display: block;
@@ -229,6 +231,8 @@ a:hover {
   .image-caption {
     max-width: 350px;
     font-size: 1.08rem;
+    margin: 0.5rem 0 0 0;
+    padding: 0.3rem 0.2rem;
   }
   .link-box {
     max-width: 420px;
@@ -251,11 +255,6 @@ a:hover {
   .link-box a {
     font-size: 1.35rem;
     padding: 0.35rem 0.6rem;
-  }
-  .image-caption {
-    font-size: 1.08rem;
-    margin: 0.5rem 0 0 0;
-    padding: 0.3rem 0.2rem;
   }
 }
 @media (min-width: 900px) {
