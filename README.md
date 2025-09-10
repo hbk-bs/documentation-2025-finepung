@@ -1,5 +1,5 @@
-# Überschrift
-## Unterschrift
+# Dokumentation Sommersemester 2025
+## Grundlagen der digitalen Kommunikation
 
 - Punkt 1
 - Punkt 2
