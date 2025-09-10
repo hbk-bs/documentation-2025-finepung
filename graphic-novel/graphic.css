@@ -107,6 +107,26 @@ footer {
   background: #fff;
   border-top: 1px solid #eee;
 }
+.image-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 2rem 0 1rem 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.image-row .project-image {
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+  background: #f8f8f8;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+  display: block;
+}
 @media (min-width: 600px) {
   header {
     padding: 2rem 0 1.2rem 0;
