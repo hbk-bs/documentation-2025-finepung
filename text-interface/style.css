@@ -32,13 +32,6 @@ body {
     line-height: 1.8;
     animation: backgroundShimmer 15s ease infinite;
     overflow-y: auto;
-    cursor: none;
-}
-
-@keyframes backgroundShimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 /* --- MAIN LAYOUT --- */
@@ -380,6 +373,48 @@ main::before {
     pointer-events: none;
 }
 
+/* --- BACKLINK BUTTON --- */
+@import url('https://fonts.googleapis.com/css2?family=Canterbury&display=swap');
+
+#backlink-blog {
+  --color-accent: var(--dark-rose);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px dashed var(--dark-rose);
+  background-color: var(--medium-rose);
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  transform: rotate(-2deg) scale(0.9);
+  box-shadow: 0 0 10px 0 var(--rose-shadow);
+  font-family: 'Canterbury', cursive;
+  z-index: 10;
+}
+#backlink-blog:hover {
+  transform: rotate(2deg) scale(1);
+  background-color: var(--light-rose);
+}
+#backlink-blog a {
+  text-decoration: none;
+  color: inherit;
+  background-image: linear-gradient(to right,
+                      var(--color-accent) 0%,
+                      var(--color-accent) 100%);
+  background-size: 0% 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+  padding: 0.5rem;
+  display: inline-block;
+}
+#backlink-blog a:hover {
+  background-size: 100% 100%;
+  color: white;
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 600px) {

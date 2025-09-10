@@ -78,9 +78,49 @@
             color: #333;
             z-index: 100;
         }
+        #backlink-blog {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          border: 1px dashed #333;
+          background-color: #fff;
+          padding: 8px 16px;
+          cursor: pointer;
+          color: #333;
+          font-size: 0.95rem;
+          font-weight: bold;
+          transition: all 0.3s ease;
+          transform: rotate(-2deg) scale(0.95);
+          box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+          z-index: 10;
+        }
+        #backlink-blog:hover {
+          transform: rotate(2deg) scale(1.05);
+          background-color: #f8f8f8;
+        }
+        #backlink-blog a {
+          text-decoration: none;
+          color: inherit;
+          background-image: linear-gradient(to right, #333 0%, #333 100%);
+          background-size: 0% 100%;
+          background-position: left center;
+          background-repeat: no-repeat;
+          transition: background-size 0.2s ease-in-out;
+          padding: 0.5rem 1rem;
+          display: inline-block;
+          border-radius: 6px;
+        }
+        #backlink-blog a:hover {
+          background-size: 100% 100%;
+          color: #fff;
+        }
     </style>
 </head>
 <body>
+    <div id="backlink-blog">
+      <a href="/index.html">Zurück zur Dokumentation</a>
+    </div>
     <main>
         <nav>
             <h1 class="title">Nature of Code</h1>
@@ -90,5 +130,6 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
     <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
