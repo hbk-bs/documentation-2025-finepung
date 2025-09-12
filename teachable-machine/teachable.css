@@ -40,6 +40,16 @@ header h2 {
     font-weight: 400;
 }
 
+header a {
+    color: #222;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+header a:hover {
+    color: #d32f2f;
+}
+
 /* Main Content */
 main {
     width: 100%;
