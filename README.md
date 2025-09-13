@@ -1,22 +1,27 @@
 # Dokumentation Sommersemester 2025
-Im Sommersemester haben wir uns in dem Seminar von Fabian Morón Zirfas "Grundlagen der digitalen Kommunikation" in vier verschiedenen Projekten und einer Plenumsdiskussion näher mit dem Thema Künstlicher Intelligenz auseinander gesetzt. 
 
-Meine Dokumenation-Website beinhaltet Links zu den jeweiligen Projekten, die mit Reflektionen und visuellen Elementen untermalt sind, und eine Gesamtreflektion des Semesters.
-Die Hauptseite (index.html) verlinkt alle anderen Seiten, die in .html Dateien aufgeteilt sind. Über diese Dateien gelant man zu den Projekt-Websites, die ich mit "Zurück zur Startseite" Buttons versehen habe für eine flüssigere Navigation durch die Dokumentation.
-Alle Websites wurde auf "Mobile First" angelegt, so dass sie reponsiv sind und auf Desktop aber in erster Linie auf dem Handy genutzt werden können.
+Im Sommersemester haben wir uns im Seminar "Grundlagen der digitalen Kommunikation" bei Fabian Morón Zirfas in vier verschiedenen Projekten und einer Plenumsdiskussion mit dem Thema Künstliche Intelligenz auseinandergesetzt.
+
+## Überblick über die Website
+
+Diese Dokumentations-Website bietet einen strukturierten Zugang zu allen Projekten des Semesters sowie eine Gesamtreflektion. Die Hauptseite (`index.html`) dient als zentrale Navigationsplattform und verlinkt auf die einzelnen Projektseiten.
+
+
+- **Navigation:** Über die Hauptseite gelangt man zu allen Unterseiten. Jeder Projektbereich ist als eigene `.html`-Datei umgesetzt.
+- **Zurück zur Startseite:** Jede Projektseite enthält einen Button, um bequem zur Hauptseite zurückzukehren.
+- **Mobile First:** Das Design ist responsiv und für die mobile Nutzung optimiert, funktioniert aber auch auf dem Desktop.
+- **Inhalt:** Neben Links zu den Projekten gibt es kurze Reflektionen, visuelle Elemente und eine Gesamtreflektion.
 
 ## Projekte des Semesters
+
 - Teachable Machine: Ist das eine Beere?
 - Nature of Code: Wo der Wind dich hin trägt
-- Text the universial interface: Dein sprudelner Sprüchebrunnen
-- A generative story: A lions adventure
+- Text the universal interface: Dein sprudelnder Sprüchebrunnen
+- A generative story: A lion's adventure
 - Debate Club: Pro und Kontra KI
 
 ---
 
-_Eine Dokuemnation von Josefine Unger
+_Eine Dokumentation von Josefine Unger  
 @HBK Braunschweig SoSe25_
 
-
-
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/yqeFQCSs)
