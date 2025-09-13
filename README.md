@@ -12,7 +12,7 @@ Alle Websites wurde auf "Mobile First" angelegt, so dass sie reponsiv sind und a
 - A generative story: A lions adventure
 - Debate Club: Pro und Kontra KI
 
-
+---
 
 _Eine Dokuemnation von Josefine Unger
 @HBK Braunschweig SoSe25_
