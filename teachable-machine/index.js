@@ -22,9 +22,18 @@ function setup() {
 	const imageContainer = document.getElementById('image-container');
 	const fileInput = document.getElementById('file');
 
-	// Make file input always visible for mobile
-	fileInput.style.display = 'block';
-	fileInput.style.margin = '1rem auto';
+	// Remove custom styling that hides the input
+	fileInput.style.display = '';
+	fileInput.style.margin = '';
+	fileInput.style.position = '';
+	fileInput.style.top = '';
+	fileInput.style.left = '';
+	fileInput.style.transform = '';
+	fileInput.style.zIndex = '';
+	fileInput.style.opacity = '';
+	fileInput.style.width = '';
+	fileInput.style.height = '';
+	fileInput.style.cursor = '';
 
 	// Click to open file dialog (desktop only)
 	if (window.innerWidth >= 768) {
