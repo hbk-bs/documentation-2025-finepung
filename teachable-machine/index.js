@@ -7,7 +7,7 @@ let imageModelURL = 'https://teachablemachine.withgoogle.com/models/Yyd6myV_4/';
 let img = null;
 // @ts-ignore
 
-let label = "🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓";
+let label = "🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓";
 let labelElement;
 
 function preload() {
@@ -20,96 +20,69 @@ function setup() {
 	noCanvas();
 
 	const imageContainer = document.getElementById('image-container');
-	const fileInput = document.getElementById('file');
+	const fileInput = select("#file");
 
-	// Remove custom styling that hides the input
-	fileInput.style.display = '';
-	fileInput.style.margin = '';
-	fileInput.style.position = '';
-	fileInput.style.top = '';
-	fileInput.style.left = '';
-	fileInput.style.transform = '';
-	fileInput.style.zIndex = '';
-	fileInput.style.opacity = '';
-	fileInput.style.width = '';
-	fileInput.style.height = '';
-	fileInput.style.cursor = '';
+	imageContainer.addEventListener('click', () => {
+		fileInput.elt.click();
+	});
 
-	// Click to open file dialog (desktop only)
-	if (window.innerWidth >= 768) {
-		imageContainer.addEventListener('click', () => {
-			fileInput.click();
-		});
-		imageContainer.style.cursor = 'pointer';
+	imageContainer.style.cursor = 'pointer';
+
+	imageContainer.addEventListener('dragover', (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		imageContainer.classList.add('dragover');
+	});
+
+	imageContainer.addEventListener('dragleave', (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		imageContainer.classList.remove('dragover');
+	});
+
+	imageContainer.addEventListener('drop', (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		imageContainer.classList.remove('dragover');
+
+		const file = e.dataTransfer.files[0];
+		if (file && file.type.startsWith('image/')) {
+			handleDroppedFile(file);
+		}
+	});
+
+	if (fileInput) {
+		fileInput.changed(handleFileInput);
 	}
 
-	// Remove drag & drop for mobile
-	if (window.innerWidth >= 768) {
-		imageContainer.addEventListener('dragover', (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			imageContainer.classList.add('dragover');
-		});
-		imageContainer.addEventListener('dragleave', (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			imageContainer.classList.remove('dragover');
-		});
-		imageContainer.addEventListener('drop', (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			imageContainer.classList.remove('dragover');
-			const file = e.dataTransfer.files[0];
-			if (file && file.type.startsWith('image/')) {
-				handleDroppedFile(file);
-			}
-		});
-	}
-
-	fileInput.addEventListener('change', handleFileInput);
-
-	labelElement = document.getElementById('prediction');
-	labelElement.innerHTML = label;
+	labelElement = select("#prediction");
+	labelElement.html(label);
+	textFont("system-ui");
 }
 
 function draw() {
 }
 
 function handleFileInput(event) {
-    const file = event.target.files[0];
-    if (file && file.type.startsWith("image/")) {
-        if (img) {
-            img.remove();
-        }
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            // Remove previous image if exists
-            const imageContainer = document.getElementById('image-container');
-            const oldImg = imageContainer.querySelector('img.uploaded-img');
-            if (oldImg) oldImg.remove();
-            // Create and show image in container
-            const domImg = document.createElement('img');
-            domImg.src = e.target.result;
-            domImg.alt = "uploaded image";
-            domImg.className = "uploaded-img";
-            domImg.style.maxWidth = "90%";
-            domImg.style.maxHeight = "90%";
-            domImg.style.position = "absolute";
-            domImg.style.top = "50%";
-            domImg.style.left = "50%";
-            domImg.style.transform = "translate(-50%, -50%)";
-            domImg.style.zIndex = "1";
-            imageContainer.appendChild(domImg);
-            imageContainer.classList.add('has-image');
-            // Use p5.js image for classification
-            img = createImg(e.target.result, "uploaded image");
-            img.hide(); // Hide p5 image
-            classifyImage(img);
-        };
-        reader.readAsDataURL(file);
-    } else {
-        console.log("Not an image file selected!");
-    }
+	const file = event.target.files[0];
+	if (file && file.type.startsWith("image/")) {
+		
+		if (img) {
+			img.remove();
+		}
+
+		const reader = new FileReader();
+		reader.onload = function (e) {
+			img = createImg(e.target.result, "uploaded image");
+			img.parent('image-container');
+			
+			document.getElementById('image-container').classList.add('has-image');
+			classifyImage(img);
+		};
+		reader.readAsDataURL(file);
+	} else {
+		console.log("Not an image file selected!");
+	}
 }
 
 function handleDroppedFile(file) {
