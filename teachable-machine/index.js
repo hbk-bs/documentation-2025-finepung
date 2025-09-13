@@ -7,7 +7,7 @@ let imageModelURL = 'https://teachablemachine.withgoogle.com/models/Yyd6myV_4/';
 let img = null;
 // @ts-ignore
 
-let label = "🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓";
+let label = "🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓";
 let labelElement;
 
 function preload() {
@@ -20,44 +20,47 @@ function setup() {
 	noCanvas();
 
 	const imageContainer = document.getElementById('image-container');
-	const fileInput = select("#file");
+	const fileInput = document.getElementById('file');
 
-	imageContainer.addEventListener('click', () => {
-		fileInput.elt.click();
-	});
+	// Make file input always visible for mobile
+	fileInput.style.display = 'block';
+	fileInput.style.margin = '1rem auto';
 
-	imageContainer.style.cursor = 'pointer';
-
-	imageContainer.addEventListener('dragover', (e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		imageContainer.classList.add('dragover');
-	});
-
-	imageContainer.addEventListener('dragleave', (e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		imageContainer.classList.remove('dragover');
-	});
-
-	imageContainer.addEventListener('drop', (e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		imageContainer.classList.remove('dragover');
-
-		const file = e.dataTransfer.files[0];
-		if (file && file.type.startsWith('image/')) {
-			handleDroppedFile(file);
-		}
-	});
-
-	if (fileInput) {
-		fileInput.changed(handleFileInput);
+	// Click to open file dialog (desktop only)
+	if (window.innerWidth >= 768) {
+		imageContainer.addEventListener('click', () => {
+			fileInput.click();
+		});
+		imageContainer.style.cursor = 'pointer';
 	}
 
-	labelElement = select("#prediction");
-	labelElement.html(label);
-	textFont("system-ui");
+	// Remove drag & drop for mobile
+	if (window.innerWidth >= 768) {
+		imageContainer.addEventListener('dragover', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			imageContainer.classList.add('dragover');
+		});
+		imageContainer.addEventListener('dragleave', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			imageContainer.classList.remove('dragover');
+		});
+		imageContainer.addEventListener('drop', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			imageContainer.classList.remove('dragover');
+			const file = e.dataTransfer.files[0];
+			if (file && file.type.startsWith('image/')) {
+				handleDroppedFile(file);
+			}
+		});
+	}
+
+	fileInput.addEventListener('change', handleFileInput);
+
+	labelElement = document.getElementById('prediction');
+	labelElement.innerHTML = label;
 }
 
 function draw() {
