@@ -7,7 +7,7 @@ let imageModelURL = 'https://teachablemachine.withgoogle.com/models/Yyd6myV_4/';
 let img = null;
 // @ts-ignore
 
-let label = "🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓";
+let label = "🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓🫐🍓";
 let labelElement;
 
 function preload() {
@@ -67,25 +67,40 @@ function draw() {
 }
 
 function handleFileInput(event) {
-	const file = event.target.files[0];
-	if (file && file.type.startsWith("image/")) {
-		
-		if (img) {
-			img.remove();
-		}
-
-		const reader = new FileReader();
-		reader.onload = function (e) {
-			img = createImg(e.target.result, "uploaded image");
-			img.parent('image-container');
-			
-			document.getElementById('image-container').classList.add('has-image');
-			classifyImage(img);
-		};
-		reader.readAsDataURL(file);
-	} else {
-		console.log("Not an image file selected!");
-	}
+    const file = event.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+        if (img) {
+            img.remove();
+        }
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // Remove previous image if exists
+            const imageContainer = document.getElementById('image-container');
+            const oldImg = imageContainer.querySelector('img.uploaded-img');
+            if (oldImg) oldImg.remove();
+            // Create and show image in container
+            const domImg = document.createElement('img');
+            domImg.src = e.target.result;
+            domImg.alt = "uploaded image";
+            domImg.className = "uploaded-img";
+            domImg.style.maxWidth = "90%";
+            domImg.style.maxHeight = "90%";
+            domImg.style.position = "absolute";
+            domImg.style.top = "50%";
+            domImg.style.left = "50%";
+            domImg.style.transform = "translate(-50%, -50%)";
+            domImg.style.zIndex = "1";
+            imageContainer.appendChild(domImg);
+            imageContainer.classList.add('has-image');
+            // Use p5.js image for classification
+            img = createImg(e.target.result, "uploaded image");
+            img.hide(); // Hide p5 image
+            classifyImage(img);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        console.log("Not an image file selected!");
+    }
 }
 
 function handleDroppedFile(file) {
